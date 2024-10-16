@@ -1,62 +1,68 @@
-Custom Prometheus Exporter
+# Custom Prometheus Exporter
+
 A custom Prometheus exporter built in Python that fetches data from a specified API endpoint and exposes metrics for Prometheus to scrape. This exporter is designed to be flexible, secure, and easy to configure, allowing you to monitor various metrics from any API that provides the necessary data.
 
-Table of Contents
-Features
-Prerequisites
-Installation
-Configuration
-Usage
-Metrics
-Environment Variables
-Contributing
-License
-Contact
-Features
-Flexible Metric Collection: Easily fetch and expose custom metrics from any API endpoint.
-Secure Dependency Management: Uses hashed dependencies to ensure package integrity.
-Configurable via Environment Variables: Adjust settings without modifying the source code.
-Logging: Comprehensive logging to monitor the exporter's operations and troubleshoot issues.
-Error Handling: Robust mechanisms to handle API call failures and other runtime errors.
-Docker Support: Containerize the exporter for seamless deployment across environments.
-Prerequisites
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Metrics](#metrics)
+- [Environment Variables](#environment-variables)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- **Flexible Metric Collection**: Easily fetch and expose custom metrics from any API endpoint.
+- **Secure Dependency Management**: Uses hashed dependencies to ensure package integrity.
+- **Configurable via Environment Variables**: Adjust settings without modifying the source code.
+- **Logging**: Comprehensive logging to monitor the exporter's operations and troubleshoot issues.
+- **Error Handling**: Robust mechanisms to handle API call failures and other runtime errors.
+- **Docker Support**: Containerize the exporter for seamless deployment across environments.
+
+## Prerequisites
+
 Before setting up the custom Prometheus exporter, ensure you have the following installed:
 
-Python 3.6 or higher: Download Python
-Git: Download Git
-Prometheus: Download Prometheus
-Optional - Docker: For containerized deployments. Download Docker
-Installation
-1. Clone the Repository
+- **Python 3.6 or higher**: [Download Python](https://www.python.org/downloads/)
+- **Git**: [Download Git](https://git-scm.com/downloads)
+- **Prometheus**: [Download Prometheus](https://prometheus.io/download/)
+- **Optional - Docker**: For containerized deployments. [Download Docker](https://www.docker.com/get-started)
+
+## Installation
+
+### 1. Clone the Repository
+
 First, clone the repository to your local machine:
 
-bash
-Copy code
+```bash
 git clone https://github.com/Avi-Tav/prometheus-custom-exporter.git
 cd prometheus-custom-exporter
-2. Set Up a Virtual Environment
-It's recommended to use a virtual environment to manage your project's dependencies:
+```
 
-bash
-Copy code
+### 2. Set Up a Virtual Environment
+```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-3. Install Dependencies
-Install the required Python packages using pip:
+```
 
-bash
-Copy code
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
-4. Configure Environment Variables
-Create a .env file in the root directory of your project to define the necessary environment variables:
+```
 
-bash
-Copy code
+4. Configure Environment Variables
+
 touch .env
+
+
 Open the .env file in your preferred text editor and add the following configurations:
 
-env
-Copy code
+```bash
 # .env
 
 # Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
@@ -77,8 +83,12 @@ SKIP_MONITOR_CHECK=false
 # Authentication credentials (if required by the API)
 USERNAME=username
 PASSWORD=1234
+```
+
 Security Tip: Ensure that your .env file is not committed to version control by verifying that .env is listed in your .gitignore file.
 
+
+```bash
 Configuration
 The exporter is configured via environment variables, allowing you to customize its behavior without altering the source code. Here's a breakdown of each environment variable:
 
@@ -257,3 +267,4 @@ For any questions, suggestions, or support, feel free to reach out:
 
 GitHub Issues: Open an issue
 Email: a.tavdish@gmail.com
+```
